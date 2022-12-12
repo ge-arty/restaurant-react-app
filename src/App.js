@@ -48,11 +48,11 @@ function App() {
           }
         />
         <Route
-          path="restaurant-react-app/menu"
+          path="restaurant-react-app/#/menu"
           element={<Menu array={dataState} />}
         />
-        <Route path="restaurant-react-app/contact" element={<Contact />} />
-        <Route path="restaurant-react-app/Cart" element={<Cart />} />
+        <Route path="restaurant-react-app/#/contact" element={<Contact />} />
+        <Route path="restaurant-react-app/#/Cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>
