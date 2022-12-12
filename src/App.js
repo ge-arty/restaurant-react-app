@@ -47,9 +47,12 @@ function App() {
             />
           }
         />
-        <Route path="/menu" element={<Menu array={dataState} />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route
+          path="restaurant-react-app/menu"
+          element={<Menu array={dataState} />}
+        />
+        <Route path="restaurant-react-app/contact" element={<Contact />} />
+        <Route path="restaurant-react-app/Cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>

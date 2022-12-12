@@ -7,7 +7,7 @@ export default function Card(props) {
       <button className="card-see-more">Click for details</button>
       <div className="card-purchase">
         <p className="card-price">price:{props.price}$</p>
-        <button onClick={props.changeStatus}>{props.status}</button>
+        <button onClick={(e) => props.changeStatus(e)}>{props.status}</button>
       </div>
     </div>
   );
