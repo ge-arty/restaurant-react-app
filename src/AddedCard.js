@@ -15,7 +15,15 @@ export default function AddedCard(props) {
       </button>
       <div className="card-purchase">
         <p className="card-price">price:{props.price}$</p>
-        <button onClick={() => props.changeStatus()}>{props.status}</button>
+        <button onClick={() => props.changeStatus()}>Remove</button>
+        <button
+          disabled={props.quantity == 1 ? true : false}
+          onClick={props.removeQuantity}
+        >
+          -
+        </button>
+        <p>Quantity:{props.quantity}</p>
+        <button onClick={props.addQuantity}>+</button>
       </div>
     </div>
   );
