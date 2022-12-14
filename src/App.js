@@ -8,51 +8,33 @@ import Home from "./Home";
 import Menu from "./Menu";
 import Contact from "./Contact";
 import Cart from "./Cart";
+import Detail from "./Detail";
 import { useState } from "react";
 
 function App() {
   let data = require("./Data.json");
-  const [clicked, setClicked] = useState("null");
-  const [dataState, setDataState] = useState(data);
-
-  function getRandomCards(arr, num) {
-    const randomCards = [...arr].sort(() => 0.5 - Math.random());
-    return randomCards.slice(0, num);
-  }
-
+  const [counter, setCounter] = useState(0);
   function changeStatus(name) {
-    console.log(name);
-    dataState.map((element) => {
-      if (element.name == name) {
-        element.status = "remove from cart";
-        console.log(true);
-      } else {
-        element.status = "add to cart";
-        console.log(false);
-      }
+    let array = data.find((element) => {
+      return element.name == name;
     });
+    console.log(array);
+    if (array.status == "Add to cart") {
+      return (array.status = "Added"), setCounter(counter + 1);
+    } else {
+      return (array.status = "Add to cart"), setCounter(counter - 1);
+    }
   }
-  console.log(clicked);
+
   return (
     <div className="app">
-      <Header />
+      <Header counter={counter} />
       <Routes>
-        <Route
-          index
-          element={
-            <Home
-              getRandomCards={getRandomCards(dataState, 4)}
-              changeStatus={changeStatus}
-              clicked={clicked}
-            />
-          }
-        />
-        <Route
-          path="restaurant-react-app/#/menu"
-          element={<Menu array={dataState} />}
-        />
-        <Route path="restaurant-react-app/#/contact" element={<Contact />} />
-        <Route path="restaurant-react-app/#/Cart" element={<Cart />} />
+        <Route path="/" element={<Home changeStatus={changeStatus} />} />
+        <Route path="/menu" element={<Menu changeStatus={changeStatus} />} />
+        <Route path="/menu/:id" element={<Detail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart changeStatus={changeStatus} />} />
       </Routes>
       <Footer />
     </div>

@@ -2,9 +2,10 @@ import React from "react";
 import Card from "./Card";
 
 export default function Menu(props) {
+  let data = require("./Data.json");
   return (
     <div className="menu-container">
-      {props.array.map((element, index) => {
+      {data.map((element, index) => {
         return (
           <Card
             key={index}
@@ -12,6 +13,8 @@ export default function Menu(props) {
             src={element.image}
             description={element.description}
             price={element.price}
+            status={element.status}
+            changeStatus={() => props.changeStatus(element.name)}
           />
         );
       })}

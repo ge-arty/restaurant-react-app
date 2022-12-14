@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import Card from "./Card";
 
 export default function Home(props) {
-  let shuffledCards = props.getRandomCards;
+  let data = require("./Data.json");
+  function getRandomCards(arr, num) {
+    const randomCards = [...arr].sort(() => 0.5 - Math.random());
+    return randomCards.slice(0, num);
+  }
+  let shuffledCards = getRandomCards(data, 4);
   return (
     <div className="home-container">
       <div className="home-slider"></div>

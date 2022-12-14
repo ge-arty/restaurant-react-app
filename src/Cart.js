@@ -1,6 +1,23 @@
 import React from "react";
-import Card from "./Card";
+import AddedCard from "./AddedCard";
 
 export default function Cart(props) {
-  return <div></div>;
+  let data = require("./Data.json");
+  return (
+    <div>
+      {data.map((element) => {
+        if (element.status === "Added") {
+          return (
+            <AddedCard
+              name={element.name}
+              src={element.image}
+              price={element.price}
+              status={element.status}
+              changeStatus={() => props.changeStatus(element.name)}
+            />
+          );
+        }
+      })}
+    </div>
+  );
 }

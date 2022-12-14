@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import cart from "./images/black-shopping-cart-10926.png";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div className="header-container">
       <img src="#" alt="#" className="logo" />
@@ -22,7 +22,7 @@ export default function Header() {
       <NavLink to="/cart">
         <div className="cart-box">
           <img className="cart-icon" src={cart} alt="icon" />
-          <p className="cart-counter">0</p>
+          <p className="cart-counter">{props.counter}</p>
         </div>
       </NavLink>
     </div>
