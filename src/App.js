@@ -66,7 +66,10 @@ function App() {
     <div className="app">
       <Header counter={counter} />
       <Routes>
-        <Route path="/" element={<Home changeStatus={changeStatus} />} />
+        <Route
+          path="/restaurant-react-app"
+          element={<Home changeStatus={changeStatus} />}
+        />
         <Route path="/menu" element={<Menu changeStatus={changeStatus} />} />
         <Route path="/menu/:id" element={<Detail />} />
         <Route path="/contact" element={<Contact />} />

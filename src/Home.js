@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
+import photo from "../src/images/photo1.jpg";
+import photo2 from "../src/images/photo2.jpg";
+import photo3 from "../src/images/photo3.jpg";
 
 export default function Home(props) {
   let data = require("./Data.json");
@@ -7,13 +10,19 @@ export default function Home(props) {
     const randomCards = [...arr].sort(() => 0.5 - Math.random());
     return randomCards.slice(0, num);
   }
-  let shuffledCards = getRandomCards(data, 4);
+  let RandomedCards = getRandomCards(data, 4);
+  console.log(RandomedCards);
   return (
     <div className="home-container">
-      <div className="home-slider"></div>
+      <h2 className="home-main-title">Welcome To LOGO</h2>
+      <div className="home-slider">
+        <img src={photo} alt="photo" />
+        <img src={photo2} alt="photo" />
+        <img src={photo3} alt="photo" />
+      </div>
       <h2 className="home-title">Most Popular</h2>
       <div className="random-cards">
-        {shuffledCards.map((element, index) => {
+        {RandomedCards.map((element, index) => {
           return (
             <Card
               key={index}

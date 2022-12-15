@@ -8,19 +8,18 @@ export default function Card(props) {
       <h2 className="card-name">{props.name}</h2>
       <button
         onClick={() => navigate(`/menu/${props.name}`)}
-        className="card-see-more"
+        className="view-btn"
       >
-        Click for details
+        View more...
       </button>
-      <div className="card-purchase">
-        <p className="card-price">price:{props.price}$</p>
-        <button
-          disabled={props.status == "Added" ? true : false}
-          onClick={() => props.changeStatus()}
-        >
-          {props.status}
-        </button>
-      </div>
+      <p className="card-price">Price:{props.price}$</p>
+      <button
+        className="add-btn"
+        disabled={props.status == "Added" ? true : false}
+        onClick={() => props.changeStatus()}
+      >
+        {props.status}
+      </button>
     </div>
   );
 }

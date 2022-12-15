@@ -2,7 +2,7 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 
-export default function Detail(props) {
+export default function Detail() {
   let data = require("./Data.json");
   let { id } = useParams();
   return (

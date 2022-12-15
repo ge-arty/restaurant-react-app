@@ -5,18 +5,24 @@ import cart from "./images/black-shopping-cart-10926.png";
 export default function Header(props) {
   return (
     <div className="header-container">
-      <img src="#" alt="#" className="logo" />
+      <h2 className="header-title">
+        <span>L</span>
+        <span>O</span>
+        <span>G</span>
+        <span>O</span>
+      </h2>
       <nav className="header-nav">
         <ul>
-          <li className="home-page">
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li className="menu-page">
-            <NavLink to="/menu">Menu</NavLink>
-          </li>
-          <li className="contact-page">
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
+          <NavLink to="/restaurant-react-app">
+            <li className="home-page">Home</li>
+          </NavLink>
+          <NavLink to="/menu">
+            <li className="menu-page">Menu </li>
+          </NavLink>
+
+          <NavLink to="/contact">
+            <li className="contact-page">Contact</li>
+          </NavLink>
         </ul>
       </nav>
       <NavLink to="/cart">
