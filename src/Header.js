@@ -19,7 +19,6 @@ export default function Header(props) {
           <NavLink to="/menu">
             <li>Menu</li>
           </NavLink>
-
           <NavLink to="/contact">
             <li>Contact</li>
           </NavLink>

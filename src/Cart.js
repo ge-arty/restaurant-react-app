@@ -35,6 +35,9 @@ export default function Cart(props) {
             );
           }
         })}
+        {props.counter == 0 && (
+          <h2 className="empty-text">Your cart is empty</h2>
+        )}
       </div>
     </div>
   );

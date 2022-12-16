@@ -81,7 +81,7 @@
 .header-nav ul a:hover {
   background-color: #fff;
 }
-.active {
+.header-nav ul .active {
   background-color: #fff;
 }
 
@@ -110,6 +110,13 @@
 }
 .cart-box:hover p {
   opacity: 0;
+}
+.empty-text {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  color: red;
 }
 .home-container {
   width: 100%;
@@ -330,7 +337,7 @@ iframe {
 }
 .detail-add {
   width: 100px;
-  height: 50px;
+  height: 40px;
   background-color: rgb(255, 208, 0);
   font-weight: bold;
   border: 3px solid #000;
