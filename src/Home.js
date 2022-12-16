@@ -10,8 +10,8 @@ export default function Home(props) {
     const randomCards = [...arr].sort(() => 0.5 - Math.random());
     return randomCards.slice(0, num);
   }
-  let RandomedCards = getRandomCards(data, 4);
-  console.log(RandomedCards);
+  let RandomCards = getRandomCards(data, 4);
+  console.log(RandomCards);
   return (
     <div className="home-container">
       <h2 className="home-main-title">Welcome To LOGO</h2>
@@ -22,7 +22,7 @@ export default function Home(props) {
       </div>
       <h2 className="home-title">Most Popular</h2>
       <div className="random-cards">
-        {RandomedCards.map((element, index) => {
+        {RandomCards.map((element, index) => {
           return (
             <Card
               key={index}

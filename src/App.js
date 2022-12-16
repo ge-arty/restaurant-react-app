@@ -16,6 +16,7 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [total, setTotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+
   function removeQuantity(id, price) {
     setTotalItems(totalItems - 1);
     setTotal(total * 1 - price * 1);
@@ -57,7 +58,8 @@ function App() {
       return (
         (array.status = "Add to cart"),
         setCounter(counter - 1),
-        setTotal(total * 1 - array.price)
+        setTotalItems(totalItems - array.quantity),
+        setTotal(total - array.price * array.quantity)
       );
     }
   }
@@ -71,7 +73,10 @@ function App() {
           element={<Home changeStatus={changeStatus} />}
         />
         <Route path="/menu" element={<Menu changeStatus={changeStatus} />} />
-        <Route path="/menu/:id" element={<Detail />} />
+        <Route
+          path="/menu/:id"
+          element={<Detail changeStatus={changeStatus} />}
+        />
         <Route path="/contact" element={<Contact />} />
         <Route
           path="/cart"

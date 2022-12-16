@@ -10,7 +10,7 @@ export default function Card(props) {
         onClick={() => navigate(`/menu/${props.name}`)}
         className="view-btn"
       >
-        View more...
+        View
       </button>
       <p className="card-price">Price:{props.price}$</p>
       <button

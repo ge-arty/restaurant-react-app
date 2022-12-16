@@ -9,21 +9,27 @@ export default function AddedCard(props) {
       <h2 className="card-name">{props.name}</h2>
       <button
         onClick={() => navigate(`/menu/${props.name}`)}
-        className="card-see-more"
+        className="view-btn"
       >
-        Click for details
+        View
       </button>
-      <div className="card-purchase">
-        <p className="card-price">price:{props.price}$</p>
-        <button onClick={() => props.changeStatus()}>Remove</button>
+
+      <p className="card-price">price:{props.price}$</p>
+      <button className="add-btn" onClick={() => props.changeStatus()}>
+        Remove
+      </button>
+      <div className="added-card-quantity">
         <button
+          className="quantity-btn"
           disabled={props.quantity == 1 ? true : false}
           onClick={props.removeQuantity}
         >
           -
         </button>
-        <p>Quantity:{props.quantity}</p>
-        <button onClick={props.addQuantity}>+</button>
+        <p className="quantity-title">Quantity:{props.quantity}</p>
+        <button className="quantity-btn" onClick={props.addQuantity}>
+          +
+        </button>
       </div>
     </div>
   );

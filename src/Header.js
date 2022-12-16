@@ -14,14 +14,14 @@ export default function Header(props) {
       <nav className="header-nav">
         <ul>
           <NavLink to="/restaurant-react-app">
-            <li className="home-page">Home</li>
+            <li>Home</li>
           </NavLink>
           <NavLink to="/menu">
-            <li className="menu-page">Menu </li>
+            <li>Menu</li>
           </NavLink>
 
           <NavLink to="/contact">
-            <li className="contact-page">Contact</li>
+            <li>Contact</li>
           </NavLink>
         </ul>
       </nav>
