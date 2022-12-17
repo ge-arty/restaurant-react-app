@@ -36,30 +36,29 @@ function App() {
     prodQuantity.quantity += 1;
   }
   function removeAll() {
-    data.map((item) => {
-      return (item.status = "Add to cart");
+    data.forEach((item) => {
+      item.status = "Add to cart";
     });
     setCounter(0);
     setTotal(0);
     setTotalItems(0);
   }
   function changeStatus(name) {
-    let array = data.find((element) => {
-      return element.name == name;
-    });
-    if (array.status == "Add to cart") {
+    let card = data.find((element) => element.name == name);
+
+    if (card.status == "Add to cart") {
       return (
-        ((array.status = "Added"), (array.quantity = 1)),
+        ((card.status = "Added"), (card.quantity = 1)),
         setCounter(counter + 1),
         setTotalItems(totalItems + 1),
-        setTotal(array.price * 1 + total * 1)
+        setTotal(card.price * 1 + total * 1)
       );
     } else {
       return (
-        (array.status = "Add to cart"),
+        (card.status = "Add to cart"),
         setCounter(counter - 1),
-        setTotalItems(totalItems - array.quantity),
-        setTotal(total - array.price * array.quantity)
+        setTotalItems(totalItems - card.quantity),
+        setTotal(total - card.price * card.quantity)
       );
     }
   }

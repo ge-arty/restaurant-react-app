@@ -4,14 +4,14 @@ import photo from "../src/images/photo1.jpg";
 import photo2 from "../src/images/photo2.jpg";
 import photo3 from "../src/images/photo3.jpg";
 
+let data = require("./Data.json");
+function getRandomCards(arr, num) {
+  const randomCards = [...arr].sort(() => 0.5 - Math.random());
+  return randomCards.slice(0, num);
+}
+let RandomCards = getRandomCards(data, 4);
+
 export default function Home(props) {
-  let data = require("./Data.json");
-  function getRandomCards(arr, num) {
-    const randomCards = [...arr].sort(() => 0.5 - Math.random());
-    return randomCards.slice(0, num);
-  }
-  let RandomCards = getRandomCards(data, 4);
-  console.log(RandomCards);
   return (
     <div className="home-container">
       <h2 className="home-main-title">Welcome To LOGO</h2>

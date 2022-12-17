@@ -3,6 +3,7 @@ import AddedCard from "./AddedCard";
 
 export default function Cart(props) {
   let data = require("./Data.json");
+
   return (
     <div className="cart-container">
       <h2 className="cart-title">In your Cart:</h2>
